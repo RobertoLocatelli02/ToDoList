@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Adicionar Tarefa{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('add_task') }}" method="POST" class="mt-4">
+        <div class="form-group">
+            <label for="task">Tarefa:</label>
+            <input type="text" id="task" name="task" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="due_date">Data prazo:</label>
+            <input type="date" id="due_date" name="due_date" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('register') }}" method="POST" class="mt-4">
+        <div class="form-group">
+            <label for="username">Nome:</label>
+            <input type="text" id="username" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        <a href="{{ url_for('login') }}" class="btn btn-link">Já tem uma conta? Clique aqui.</a>
+    </form>
+{% endblock %}
